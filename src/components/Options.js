@@ -6,7 +6,7 @@ class Options extends Component {
       <div className="options">
         <input
           type="number"
-          value={this.props.timerLength || 15}
+          value={this.props.timerLength}
           onChange={event => this.props.updateTimerLength(event.target.value)}
         />
         <button onClick={this.props.startTimer}>Start Timer</button>

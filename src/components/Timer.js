@@ -21,12 +21,12 @@ class Timer extends Component {
   }
 
   componentWillUnmount() {
-    this.clearInterval(this.state.timer);
+    clearInterval(this.state.timer);
   }
 
   tick() {
     this.setState({ seconds: this.state.seconds - 1 });
-    if (this.state.seconds < 0) this.clearInterval(this.state.timer);
+    if (this.state.seconds < 0) clearInterval(this.state.timer);
   }
 
   secondsToMinutesAndSeconds(seconds) {

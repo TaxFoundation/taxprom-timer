@@ -10,12 +10,14 @@ class Timer extends Component {
     };
 
     this.tick = this.tick.bind(this);
-    this.secondsToMinutesAndSeconds = this.secondsToMinutesAndSeconds.bind(this);
+    this.secondsToMinutesAndSeconds = this.secondsToMinutesAndSeconds.bind(
+      this
+    );
   }
 
   componentDidMount() {
     let timer = setInterval(this.tick, 1000);
-    this.setState({timer});
+    this.setState({ timer });
   }
 
   componentWillUnmount() {
@@ -23,7 +25,8 @@ class Timer extends Component {
   }
 
   tick() {
-    this.setState({seconds: this.state.seconds - 1});
+    this.setState({ seconds: this.state.seconds - 1 });
+    if (this.state.seconds < 0) this.clearInterval(this.state.timer);
   }
 
   secondsToMinutesAndSeconds(seconds) {
@@ -37,7 +40,16 @@ class Timer extends Component {
   render() {
     return (
       <div className="timer">
-        <p className="timer__time">{ this.secondsToMinutesAndSeconds(this.state.seconds) }</p>
+        {this.state.seconds >= 0
+          ? (
+            <p className="timer__time">
+              {this.secondsToMinutesAndSeconds(this.state.seconds)}
+            </p>
+          ) : (
+            <p className="timer__ended">
+              Please be seated--Tax Prom is starting!
+            </p>
+          )}
       </div>
     );
   }

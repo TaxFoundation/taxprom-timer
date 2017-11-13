@@ -30,6 +30,7 @@ class App extends Component {
           this.state.timerStarted
             ? <Timer time={this.state.timerLength} />
             : <Options
+              timerLength={this.state.timerLength}
               updateTimerLength={this.updateTimerLength}
               startTimer={this.startTimer}  
             />

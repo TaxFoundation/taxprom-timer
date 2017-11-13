@@ -9,7 +9,7 @@ class App extends Component {
     this.state = {
       timerLength: 15,
       timerStarted: false
-    }
+    };
 
     this.updateTimerLength = this.updateTimerLength.bind(this);
     this.startTimer = this. startTimer.bind(this);
@@ -28,8 +28,8 @@ class App extends Component {
       <div className="App">
         {
           this.state.timerStarted
-          ? <Timer time={this.state.timerLength} />
-          : <Options
+            ? <Timer time={this.state.timerLength} />
+            : <Options
               updateTimerLength={this.updateTimerLength}
               startTimer={this.startTimer}  
             />

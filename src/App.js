@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Options from './components/Options';
 import Timer from './components/Timer';
+import './style.css';
+import BG from './images/splash-bg.jpg';
 
 class App extends Component {
   constructor() {
@@ -25,7 +27,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{backgroundImage:`url(${BG})`}}>
         {
           this.state.timerStarted
             ? <Timer time={this.state.timerLength} />

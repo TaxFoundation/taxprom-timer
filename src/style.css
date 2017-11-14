@@ -1,0 +1,23 @@
+html,
+body {
+  box-sizing: border-box; }
+
+.App {
+  align-items: center;
+  display: grid;
+  font-size: 16px;
+  height: 100vh;
+  grid-template: auto / auto;
+  justify-items: center;
+  width: 100%; }
+
+.timer__time {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 60vh;
+  margin: 0; }
+
+.timer__ended {
+  font-size: 1.6rem; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,31 @@
+.options {
+  text-align: center;
+
+  &__label {
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  &__minutes {
+    background-color: $text-color;
+    border: 2px solid $pink;
+    border-radius: 4px;
+    color: $purple;
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  &__start {
+    background-color: $pink;
+    border: 1px solid $pink;
+    border-radius: 4px;
+    color: $text-color;
+    display: inline-block;
+    font-size: 2rem;
+    text-align: center;
+  }
+}

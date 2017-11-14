@@ -1,5 +1,15 @@
+$purple: #4C2E86;
+$dark-purple: #322261;
+$teal: #12BCD3;
+$pink: #E04681;
+$white: #ffffff;
+$bg-color: $dark-purple;
+$text-color: $white;
+
 html,
 body {
+  background-color: $bg-color;
+  color: $text-color;
   box-sizing: border-box;
 }
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Options from './components/Options';
 import Timer from './components/Timer';
 import './style.css';
-import BG from './images/splash-bg.jpg';
+import BG from './images/splash-bg.png';
 
 class App extends Component {
   constructor() {

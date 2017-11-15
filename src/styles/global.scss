@@ -4,13 +4,14 @@ $teal: #12BCD3;
 $pink: #E04681;
 $white: #ffffff;
 $bg-color: $dark-purple;
-$text-color: $white;
+$text-color: $purple;
 
 html,
 body {
   background-color: $bg-color;
   color: $text-color;
   box-sizing: border-box;
+  font-family: 'Oswald', sans-serif;
 }
 
 .App {

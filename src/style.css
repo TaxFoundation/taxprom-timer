@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
 html,
 body {
   background-color: #322261;
-  color: #ffffff;
-  box-sizing: border-box; }
+  color: #4C2E86;
+  box-sizing: border-box;
+  font-family: 'Oswald', sans-serif; }
 
 .App {
   align-items: center;
@@ -19,7 +21,6 @@ body {
   text-align: center; }
   .options__label {
     display: block;
-    font-family: sans-serif;
     font-size: 1.6rem;
     margin-bottom: 0.8rem; }
   .options__minutes {
@@ -40,13 +41,29 @@ body {
     font-size: 2rem;
     text-align: center; }
 
+.timer p {
+  margin: 0; }
+
 .timer__time {
-  font-family: sans-serif;
-  font-size: 30vh;
-  margin: 0;
+  font-size: 15rem;
+  line-height: 1.2;
+  text-align: center; }
+
+.timer__after {
+  font-size: 2rem;
+  line-height: 0;
   text-align: center; }
 
 .timer__ended {
-  font-size: 1.6rem; }
+  background: #ffffff;
+  font-size: 2.7rem;
+  line-height: 1.4;
+  max-width: 700px;
+  padding: 1rem;
+  text-align: center; }
+
+.timer__name {
+  font-size: 3rem;
+  font-weight: 700; }
 
 /*# sourceMappingURL=style.css.map */

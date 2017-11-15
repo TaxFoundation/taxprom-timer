@@ -42,12 +42,17 @@ class Timer extends Component {
       <div className="timer">
         {this.state.seconds >= 0
           ? (
-            <p className="timer__time">
-              {this.secondsToMinutesAndSeconds(this.state.seconds)}
-            </p>
+            <div>
+              <p className="timer__time">
+                {this.secondsToMinutesAndSeconds(this.state.seconds)}
+              </p>
+              <p className="timer__after">
+                Until We Begin with Vice President Mike Pence
+              </p>
+            </div>
           ) : (
             <p className="timer__ended">
-              Please be seated--Tax Prom is starting!
+              Please be seated and join us in honoring the Tax Foundation's 2017 Distinguished Service Award recipient,<br /><span className="timer__name">Vice President Mike Pence!</span>
             </p>
           )}
       </div>

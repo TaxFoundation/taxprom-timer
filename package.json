@@ -17,7 +17,10 @@
   },
   "devDependencies": {
     "eslint": "^4.10.0",
-    "eslint-plugin-react": "^7.4.0"
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1"
   },
   "homepage": "https://static.taxfoundation.org/timer"
 }

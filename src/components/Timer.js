@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
 const StyledTimer = styled.div`
@@ -10,6 +10,11 @@ const StyledTimer = styled.div`
 const Time = styled.p`
   font-size: 15rem;
   line-height: 1.2;
+  text-align: center;
+`;
+
+const TimeText = styled.p`
+  font-size: 2rem;
   text-align: center;
 `;
 
@@ -61,12 +66,13 @@ class Timer extends Component {
     return (
       <StyledTimer>
         {this.state.seconds >= 0 ? (
-          <Time>{this.secondsToMinutesAndSeconds(this.state.seconds)}</Time>
+          <Fragment>
+            <Time>{this.secondsToMinutesAndSeconds(this.state.seconds)}</Time>
+            <TimeText>Until Bars Close and the Dinner Begins</TimeText>
+          </Fragment>
         ) : (
           <EndedText>
-            Please be seated and join us in honoring the Tax Foundation's 2017 Distinguished Service Award recipient,
-            <br />
-            <span className="timer__name">Vice President Mike Pence!</span>
+            Please be seated and join us in honoring the Tax Foundation's 2018 Distinguished Service Award recipients!
           </EndedText>
         )}
       </StyledTimer>

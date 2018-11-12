@@ -26,6 +26,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Bebas Neue', sans-serif;
     margin: 0;
     padding: 0;
+
+    @media (min-width: 800px) {
+      font-size: 2vw;
+    }
   }
 `;
 

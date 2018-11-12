@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 
     @media (min-width: 800px) {
-      font-size: 2vw;
+      font-size: 2vmin;
     }
   }
 `;

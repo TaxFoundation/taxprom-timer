@@ -1,4 +1,38 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const StyledTimer = styled.div`
+  p {
+    margin: 0;
+  }
+
+  .timer__time {
+    font-size: 15rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .timer__after {
+    font-size: 2rem;
+    line-height: 0;
+    text-align: center;
+  }
+
+  .timer__ended {
+    background: ${props => props.theme.white};
+    font-size: 2.7rem;
+    line-height: 1.4;
+    max-width: 700px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .timer__name {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+`;
 
 class Timer extends Component {
   constructor(props) {
@@ -39,7 +73,7 @@ class Timer extends Component {
 
   render() {
     return (
-      <div className="timer">
+      <StyledTimer>
         {this.state.seconds >= 0
           ? (
             <div>
@@ -55,7 +89,7 @@ class Timer extends Component {
               Please be seated and join us in honoring the Tax Foundation's 2017 Distinguished Service Award recipient,<br /><span className="timer__name">Vice President Mike Pence!</span>
             </p>
           )}
-      </div>
+      </StyledTimer>
     );
   }
 }

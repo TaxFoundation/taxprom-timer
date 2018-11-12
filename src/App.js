@@ -1,25 +1,35 @@
 import React, { Component, Fragment } from 'react';
-import styled, {createGlobalStyle, ThemeProvider} from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Options from './components/Options';
 import Timer from './components/Timer';
 import BG from './images/background.svg';
-import Container from './images/container.svg';
+import BebasNeue from './fonts/BebasNeue-Regular.woff2';
 
 const theme = {
-  white: '#ffffff',
-  bgColor: '#4C2E86',
-  textColor: '#322261',
+  white: '#fff',
+  gold: '#fbb316',
+  teal: '#00acc1',
+  blue: '#005b97',
+  darkBlue: '#003f6c',
+  bgColor: '#fff',
+  textColor: '#005b97',
+  fontFamily: '"Bebas Neue", sans-serif',
 };
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Bebas Neue';
+    src: url('${BebasNeue}');
+  }
+
   html, body {
+    font-family: 'Bebas Neue', sans-serif;
     margin: 0;
     padding: 0;
   }
 `;
 
 const StyledApp = styled.div`
-  align-items: center;
   background-color: ${props => props.theme.bgColor};
   background-image: url('${BG}');
   background-position: 50% 50%;
@@ -27,20 +37,21 @@ const StyledApp = styled.div`
   box-sizing: border-box;
   color: ${props => props.theme.textColor};
   display: grid;
-  font-family: 'Oswald', sans-serif;
   font-size: 16px;
   grid-template: 100vh / 100vw;
   height: 100vh;
-  justify-items: center;
   width: 100%;
+`;
 
-  > div {
-    align-self: stretch;
-    background-image: url('${Container}');
-    background-size: 100% 100%;
-    justify-self: stretch;
-    margin: 3rem;
-  }
+const Container = styled.div`
+  align-items: center;
+  align-self: stretch;
+  background-color: ${props => props.theme.bgColor};
+  border: 5px solid ${props => props.theme.gold};
+  display: grid;
+  justify-items: center;
+  justify-self: stretch;
+  margin: 3rem;
 `;
 
 class App extends Component {
@@ -49,7 +60,7 @@ class App extends Component {
 
     this.state = {
       timerLength: 15,
-      timerStarted: false
+      timerStarted: false,
     };
 
     this.updateTimerLength = this.updateTimerLength.bind(this);
@@ -57,30 +68,30 @@ class App extends Component {
   }
 
   updateTimerLength(time) {
-    this.setState({timerLength: time});
+    this.setState({ timerLength: time });
   }
 
   startTimer() {
-    this.setState({timerStarted: true});
+    this.setState({ timerStarted: true });
   }
 
   render() {
     return (
       <Fragment>
-        <GlobalStyle></GlobalStyle>
+        <GlobalStyle />
         <ThemeProvider theme={theme}>
           <StyledApp>
-            <div>
-              {
-                this.state.timerStarted
-                  ? <Timer time={this.state.timerLength} />
-                  : <Options
-                    timerLength={this.state.timerLength}
-                    updateTimerLength={this.updateTimerLength}
-                    startTimer={this.startTimer}  
-                  />
-              }
-            </div>
+            <Container>
+              {this.state.timerStarted ? (
+                <Timer time={this.state.timerLength} />
+              ) : (
+                <Options
+                  timerLength={this.state.timerLength}
+                  updateTimerLength={this.updateTimerLength}
+                  startTimer={this.startTimer}
+                />
+              )}
+            </Container>
           </StyledApp>
         </ThemeProvider>
       </Fragment>

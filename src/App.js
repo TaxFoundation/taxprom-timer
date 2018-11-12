@@ -51,7 +51,7 @@ const Container = styled.div`
   display: grid;
   justify-items: center;
   justify-self: stretch;
-  margin: 3rem;
+  margin: 10%;
 `;
 
 class App extends Component {

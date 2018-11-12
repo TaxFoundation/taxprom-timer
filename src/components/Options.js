@@ -7,7 +7,7 @@ const StyledOptions = styled.div`
   label {
     color: ${props => props.theme.blue};
     display: block;
-    font-size: 2rem;
+    font-size: 4rem;
     margin-bottom: 2rem;
   }
 
@@ -18,8 +18,8 @@ const StyledOptions = styled.div`
     color: ${props => props.theme.textColor};
     display: block;
     font-family: ${props => props.theme.fontFamily};
-    font-size: 2rem;
-    margin-bottom: 3rem;
+    font-size: 3rem;
+    margin: 0 auto 3rem;
     text-align: center;
   }
 
@@ -30,8 +30,8 @@ const StyledOptions = styled.div`
     color: ${props => props.theme.white};
     display: inline-block;
     font-family: ${props => props.theme.fontFamily};
-    font-size: 1.6rem;
-    padding: 0.4rem;
+    font-size: 3rem;
+    padding: 1rem;
     text-align: center;
   }
 `;

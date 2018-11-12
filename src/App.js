@@ -51,11 +51,12 @@ const Container = styled.div`
   align-items: center;
   align-self: stretch;
   background-color: ${props => props.theme.bgColor};
-  border: 5px solid ${props => props.theme.gold};
+  border: 1vw solid ${props => props.theme.gold};
   display: grid;
   justify-items: center;
   justify-self: stretch;
   margin: 10%;
+  padding: 1rem;
 `;
 
 class App extends Component {
@@ -63,7 +64,7 @@ class App extends Component {
     super();
 
     this.state = {
-      timerLength: 15,
+      timerLength: 5,
       timerStarted: false,
     };
 

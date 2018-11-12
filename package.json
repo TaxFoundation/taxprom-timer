@@ -22,7 +22,7 @@
     "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.15.2"
   },
-  "homepage": "https://static.taxfoundation.org/timer",
+  "homepage": "https://timer.taxprom.com/",
   "browserslist": [
     ">0.2%",
     "not dead",

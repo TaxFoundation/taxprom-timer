@@ -11,10 +11,10 @@ const StyledOptions = styled.div`
   }
 
   input {
-    background-color: $white;
-    border: 2px solid $pink;
+    background-color: ${props => props.theme.white};
+    border: 2px solid ${props => props.theme.pink};
     border-radius: 4px;
-    color: $text-color;
+    color: ${props => props.theme.textColor};
     display: block;
     font-size: 2rem;
     margin-bottom: 3rem;
@@ -22,10 +22,10 @@ const StyledOptions = styled.div`
   }
 
   button {
-    background-color: $pink;
-    border: 1px solid $pink;
+    background-color: ${props => props.theme.pink};
+    border: 1px solid ${props => props.theme.pink};
     border-radius: 4px;
-    color: $white;
+    color: ${props => props.theme.white};
     display: inline-block;
     font-size: 2rem;
     text-align: center;
@@ -38,14 +38,12 @@ class Options extends Component {
       <StyledOptions>
         <label htmlFor="minutes">Minutes for Countdown</label>
         <input
-        
           id="minutes"
           type="number"
           value={this.props.timerLength}
           onChange={event => this.props.updateTimerLength(event.target.value)}
         />
         <button
-        
           onClick={this.props.startTimer}
         >
           Start Timer

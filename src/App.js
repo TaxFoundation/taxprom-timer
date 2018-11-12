@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
-import styled, {ThemeProvider} from 'styled-components';
+import React, { Component, Fragment } from 'react';
+import styled, {createGlobalStyle, ThemeProvider} from 'styled-components';
 import Options from './components/Options';
 import Timer from './components/Timer';
-import BG from './images/splash-bg.png';
+import BG from './images/background.svg';
+import Container from './images/container.svg';
 
 const theme = {
-  purple: '#4C2E86',
-  darkPurple: '#322261',
-  teal: '#12BCD3',
-  pink: '#E04681',
   white: '#ffffff',
-  bgColor: this.darkPurple,
-  textColor: this.purple,
+  bgColor: '#4C2E86',
+  textColor: '#322261',
 };
+
+const GlobalStyle = createGlobalStyle`
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 const StyledApp = styled.div`
   align-items: center;
@@ -25,10 +29,18 @@ const StyledApp = styled.div`
   display: grid;
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
-  grid-template: auto / auto;
+  grid-template: 100vh / 100vw;
   height: 100vh;
   justify-items: center;
   width: 100%;
+
+  > div {
+    align-self: stretch;
+    background-image: url('${Container}');
+    background-size: 100% 100%;
+    justify-self: stretch;
+    margin: 3rem;
+  }
 `;
 
 class App extends Component {
@@ -41,7 +53,7 @@ class App extends Component {
     };
 
     this.updateTimerLength = this.updateTimerLength.bind(this);
-    this.startTimer = this. startTimer.bind(this);
+    this.startTimer = this.startTimer.bind(this);
   }
 
   updateTimerLength(time) {
@@ -54,19 +66,24 @@ class App extends Component {
 
   render() {
     return (
-      <ThemeProvider theme={theme}>
-        <StyledApp>
-          {
-            this.state.timerStarted
-              ? <Timer time={this.state.timerLength} />
-              : <Options
-                timerLength={this.state.timerLength}
-                updateTimerLength={this.updateTimerLength}
-                startTimer={this.startTimer}  
-              />
-          }
-        </StyledApp>
-      </ThemeProvider>
+      <Fragment>
+        <GlobalStyle></GlobalStyle>
+        <ThemeProvider theme={theme}>
+          <StyledApp>
+            <div>
+              {
+                this.state.timerStarted
+                  ? <Timer time={this.state.timerLength} />
+                  : <Options
+                    timerLength={this.state.timerLength}
+                    updateTimerLength={this.updateTimerLength}
+                    startTimer={this.startTimer}  
+                  />
+              }
+            </div>
+          </StyledApp>
+        </ThemeProvider>
+      </Fragment>
     );
   }
 }

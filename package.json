@@ -4,25 +4,29 @@
   "private": true,
   "dependencies": {
     "chroma-js": "^1.3.4",
-    "concurrently": "^3.5.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-scripts": "1.0.14"
+    "react-scripts": "2.1.1",
+    "styled-components": "^4.1.0"
   },
   "scripts": {
-    "watch-sass": "node-sass src/style.scss src/style.css -w --source-map=src/style.css.map",
-    "start-js": "react-scripts start",
-    "start": "concurrently -c \"magenta,cyan\" --names \"Sass,React\" \"npm run watch-sass\" \"npm run start-js\"",
-    "build-sass": "node-sass src/style.scss src/style.css --output-style=compressed",
-    "build-js": "react-scripts build",
-    "build": "npm run build-sass && npm run build-js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "eslint": "^4.10.0",
-    "eslint-plugin-react": "^7.4.0",
-    "node-sass": "^4.5.3"
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.15.2"
   },
-  "homepage": "https://static.taxfoundation.org/timer"
+  "homepage": "https://static.taxfoundation.org/timer",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

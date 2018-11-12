@@ -1,4 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import styled from 'styled-components';
+
+const StyledTimer = styled.div`
+  p {
+    margin: 0;
+  }
+`;
+
+const Time = styled.p`
+  font-size: 15rem;
+  line-height: 1.2;
+  text-align: center;
+`;
+
+const TimeText = styled.p`
+  font-size: 2rem;
+  text-align: center;
+`;
+
+const EndedText = styled.p`
+  background: ${props => props.theme.white};
+  font-size: 2.7rem;
+  line-height: 1.4;
+  max-width: 700px;
+  padding: 1rem;
+  text-align: center;
+`;
 
 class Timer extends Component {
   constructor(props) {
@@ -6,13 +33,11 @@ class Timer extends Component {
 
     this.state = {
       seconds: this.props.time * 60,
-      timer: null
+      timer: null,
     };
 
     this.tick = this.tick.bind(this);
-    this.secondsToMinutesAndSeconds = this.secondsToMinutesAndSeconds.bind(
-      this
-    );
+    this.secondsToMinutesAndSeconds = this.secondsToMinutesAndSeconds.bind(this);
   }
 
   componentDidMount() {
@@ -39,23 +64,18 @@ class Timer extends Component {
 
   render() {
     return (
-      <div className="timer">
-        {this.state.seconds >= 0
-          ? (
-            <div>
-              <p className="timer__time">
-                {this.secondsToMinutesAndSeconds(this.state.seconds)}
-              </p>
-              <p className="timer__after">
-                Until We Begin with Vice President Mike Pence
-              </p>
-            </div>
-          ) : (
-            <p className="timer__ended">
-              Please be seated and join us in honoring the Tax Foundation's 2017 Distinguished Service Award recipient,<br /><span className="timer__name">Vice President Mike Pence!</span>
-            </p>
-          )}
-      </div>
+      <StyledTimer>
+        {this.state.seconds >= 0 ? (
+          <Fragment>
+            <Time>{this.secondsToMinutesAndSeconds(this.state.seconds)}</Time>
+            <TimeText>Until Bars Close and the Dinner Begins</TimeText>
+          </Fragment>
+        ) : (
+          <EndedText>
+            Please be seated and join us in honoring the Tax Foundation's 2018 Distinguished Service Award recipients!
+          </EndedText>
+        )}
+      </StyledTimer>
     );
   }
 }

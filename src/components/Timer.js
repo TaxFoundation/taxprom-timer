@@ -14,7 +14,7 @@ const Time = styled.p`
 `;
 
 const TimeText = styled.p`
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
 `;
 
@@ -68,7 +68,11 @@ class Timer extends Component {
         {this.state.seconds >= 0 ? (
           <Fragment>
             <Time>{this.secondsToMinutesAndSeconds(this.state.seconds)}</Time>
-            <TimeText>Until Bars Close and the Dinner Begins</TimeText>
+            <TimeText>
+              Until Bars Close
+              <br />
+              and the Dinner Begins
+            </TimeText>
           </Fragment>
         ) : (
           <EndedText>

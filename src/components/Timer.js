@@ -77,7 +77,7 @@ class Timer extends Component {
           </Fragment>
         ) : (
           <EndedText>
-            Please be seated and join us in honoring the Tax Foundation's 2018 Distinguished Service Award recipients!
+            Please be seated and join us in honoring the Tax Foundation's 2019 Distinguished Service Award recipient!
           </EndedText>
         )}
       </StyledTimer>

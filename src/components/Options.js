@@ -9,28 +9,30 @@ const StyledOptions = styled.div`
     display: block;
     font-size: 4rem;
     margin-bottom: 2rem;
+    text-transform: uppercase;
   }
 
   input {
-    background-color: ${props => props.theme.white};
-    border: 2px solid ${props => props.theme.teal};
+    background-color: #fff;
+    border: 2px solid ${props => props.theme.blue};
     border-radius: 4px;
-    color: ${props => props.theme.textColor};
+    color: ${props => props.theme.blue};
     display: block;
-    font-family: ${props => props.theme.fontFamily};
+    font-family: 'Lato', sans-serif;
     font-size: 3rem;
     margin: 0 auto 3rem;
     text-align: center;
   }
 
   button {
-    background-color: ${props => props.theme.teal};
-    border: 1px solid ${props => props.theme.teal};
+    background-color: ${props => props.theme.blue};
+    border: 1px solid ${props => props.theme.blue};
     border-radius: 4px;
-    color: ${props => props.theme.white};
+    color: #fff;
     display: inline-block;
-    font-family: ${props => props.theme.fontFamily};
-    font-size: 3rem;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 2rem;
+    font-style: italic;
     padding: 1rem;
     text-align: center;
   }

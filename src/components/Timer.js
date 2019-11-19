@@ -1,20 +1,21 @@
 import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 
-const StyledTimer = styled.div`
-  p {
-    margin: 0;
-  }
-`;
+const StyledTimer = styled.div``;
 
 const Time = styled.p`
+  border-bottom: 3px solid ${props => props.theme.yellow};
+  color: ${props => props.theme.blue};
   font-size: 15rem;
   line-height: 1.2;
+  margin: 0 0 3rem;
   text-align: center;
 `;
 
 const TimeText = styled.p`
+  font-family: 'Libre Baskerville';
   font-size: 3rem;
+  font-style: italic;
   text-align: center;
 `;
 
